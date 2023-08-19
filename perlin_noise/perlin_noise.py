@@ -95,3 +95,7 @@ class PerlinNoise(object):
                 coors, self.seed * hasher(coors),
             )
         return self.cache[coors]
+
+    def get_gradient_vector(self, coors):
+        """Retrieve the gradient vector for the given coordinates."""
+        return self.get_from_cache_of_create_new(coors).vec
